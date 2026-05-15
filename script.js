@@ -140,4 +140,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animateElements.forEach(el => observer.observe(el));
     }
+
+    // --- Chat Widget Logic ---
+    const chatWidget = document.getElementById('chat-widget');
+    const openChatBtn = document.getElementById('open-chat');
+    const closeChatBtn = document.getElementById('close-chat');
+    const chatInput = document.getElementById('chat-input');
+    const sendChatBtn = document.getElementById('send-chat');
+    const chatMessages = document.getElementById('chat-messages');
+
+    if (chatWidget && openChatBtn && closeChatBtn) {
+        // Toggle Chat
+        openChatBtn.addEventListener('click', () => {
+            chatWidget.classList.add('active');
+            chatInput.focus();
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatWidget.classList.remove('active');
+        });
+
+        // Send Message Logic
+        const sendMessage = async () => {
+            const messageText = chatInput.value.trim();
+            if (!messageText) return;
+
+            // 1. Add user message to UI
+            appendMessage(messageText, 'user');
+            chatInput.value = '';
+
+            // 2. Show typing indicator
+            const typingIndicator = showTypingIndicator();
+
+            // 3. Simulate backend response with 'bientôt disponible'
+            setTimeout(() => {
+                typingIndicator.remove();
+                appendMessage("Le chatbot sera bientôt disponible !", 'assistant');
+            }, 1000);
+        };
+
+        sendChatBtn.addEventListener('click', sendMessage);
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Helper to append message
+        function appendMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', sender);
+            msgDiv.textContent = text;
+            chatMessages.appendChild(msgDiv);
+            scrollToBottom();
+        }
+
+        // Helper for typing indicator
+        function showTypingIndicator() {
+            const indicator = document.createElement('div');
+            indicator.classList.add('typing-indicator');
+            indicator.innerHTML = '<span></span><span></span><span></span>';
+            chatMessages.appendChild(indicator);
+            scrollToBottom();
+            return indicator;
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
 });
