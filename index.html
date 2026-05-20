@@ -405,10 +405,12 @@
                     <!-- Contact Form -->
                     <div class="col-md-3 footer-contact">
                         <h3>Obtenir un Devis</h3>
-                        <form id="contactForm" class="footer-form">
-                            <input type="text" placeholder="Nom" required>
-                            <input type="email" placeholder="Email" required>
-                            <textarea rows="3" placeholder="Message" required></textarea>
+                        <form id="contactForm" class="footer-form" action="https://formsubmit.co/contact@edenfrom-eng.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nouveau message depuis le site web Edenfrom Engineering">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="nom" placeholder="Nom" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" rows="3" placeholder="Message" required></textarea>
                             <button type="submit" class="btn-primary w-100">Envoyer</button>
                         </form>
                     </div>

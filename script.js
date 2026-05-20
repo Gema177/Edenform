@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Form Submission (Prevent Default for Demo) ---
+    // --- Form Submission (AJAX via FormSubmit) ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -108,17 +108,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             btn.innerText = 'Envoi...';
 
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerText = 'Envoyé !';
-                btn.style.backgroundColor = '#28a745';
-                contactForm.reset();
+            const formData = new FormData(contactForm);
 
+            fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    btn.innerText = 'Envoyé !';
+                    btn.style.backgroundColor = '#28a745';
+                    contactForm.reset();
+                } else {
+                    btn.innerText = 'Erreur';
+                    btn.style.backgroundColor = '#dc3545';
+                }
+            })
+            .catch(error => {
+                btn.innerText = 'Erreur';
+                btn.style.backgroundColor = '#dc3545';
+                console.error("Erreur:", error);
+            })
+            .finally(() => {
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.style.backgroundColor = '';
                 }, 3000);
-            }, 1000);
+            });
         });
     }
 
