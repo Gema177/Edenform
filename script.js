@@ -98,46 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Form Submission (AJAX via FormSubmit) ---
+    // --- Form Submission (Native for FormSubmit) ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', () => {
             const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
-
             btn.innerText = 'Envoi...';
-
-            const formData = new FormData(contactForm);
-
-            fetch(contactForm.action, {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    btn.innerText = 'Envoyé !';
-                    btn.style.backgroundColor = '#28a745';
-                    contactForm.reset();
-                } else {
-                    btn.innerText = 'Erreur';
-                    btn.style.backgroundColor = '#dc3545';
-                }
-            })
-            .catch(error => {
-                btn.innerText = 'Erreur';
-                btn.style.backgroundColor = '#dc3545';
-                console.error("Erreur:", error);
-            })
-            .finally(() => {
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.backgroundColor = '';
-                }, 3000);
-            });
+            // We do not prevent default here, so the form submits natively
+            // to FormSubmit to allow the initial activation step.
         });
     }
 
