@@ -158,7 +158,19 @@ header::before {
 .service-nav li:hover::after, .service-nav li.active::after { color: var(--white); }
 .service-panel { display: none; padding: 30px; background: var(--white); border: 1px solid #eee; min-height: 400px; }
 .service-panel.active { display: block; animation: fadeIn 0.5s; }
-.service-img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 20px; }
+.service-img { 
+    width: 100%; 
+    height: 280px; 
+    object-fit: cover; 
+    margin-bottom: 20px; 
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* ==========================================================================
