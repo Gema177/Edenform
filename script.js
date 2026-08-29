@@ -69,12 +69,60 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolioItems.forEach(item => {
                 if (filter === 'all' || item.classList.contains(filter)) {
                     item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
                 } else {
-                    item.style.display = 'none';
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
                 }
             });
         });
     });
+
+    // --- Portfolio Lightbox Modal ---
+    const modal = document.getElementById('portfolio-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalBadge = document.getElementById('modal-badge');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-description');
+    const modalClose = document.getElementById('modal-close');
+
+    if (modal) {
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('.portfolio-img-wrapper img');
+                const badge = card.querySelector('.portfolio-badge');
+                const title = card.querySelector('.portfolio-content h4');
+                const desc = card.querySelector('.portfolio-content p');
+
+                if (img && title && desc) {
+                    modalImg.src = img.src;
+                    modalImg.alt = img.alt || title.textContent;
+                    modalBadge.textContent = badge ? badge.textContent : '';
+                    modalTitle.textContent = title.textContent;
+                    modalDesc.textContent = desc.textContent;
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        const closeModal = () => modal.classList.remove('active');
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 
     // --- Smooth Scrolling ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -26,7 +26,7 @@
             </div>
             <div class="top-bar-right">
                 <a href="#contactForm" class="btn-sm"><i class="fas fa-file-invoice"></i> Demander un Devis</a>
-                <a href="#" class="btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger Brochure</a>
+                <a href="assets/EDENFROM%20ENGINEERING%20Brochure.pdf" download="EDENFROM_ENGINEERING_Brochure.pdf" target="_blank" class="btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger Brochure</a>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                         <li><a href="#home" class="active">Accueil</a></li>
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#services">Nos Services</a></li>
-                        <!-- <li><a href="#projects">Nos Projets</a></li> -->
+                        <li><a href="#projects">Nos Projets</a></li>
                         <li><a href="#training">Formation Technique</a></li>
                         <li><a href="#contact">Contactez-nous</a></li>
                     </ul>
@@ -333,34 +333,214 @@
     </section>
 
 
-    <!-- Projects Portfolio (MASQUÉ TEMPORAIREMENT) -->
-    <!--
-    <section id="projects" class="projects-section section bg-light">
+    <!-- Portfolio / Nos Projets Section -->
+    <section id="projects" class="projects-section section">
         <div class="container">
-            <h2 class="section-heading text-center">Projets Récents</h2>
+            <h2 class="section-heading text-center">Nos Projets & Réalisations</h2>
             <div class="heading-line center-line"></div>
+            <p class="text-center" style="max-width: 700px; margin: -15px auto 35px; color: var(--text-light);">
+                Découvrez une sélection de nos projets d'ingénierie, de conception 3D et de réalisations de chantier sur le terrain.
+            </p>
 
-            <div class="portfolio-filters">
+            <div class="portfolio-filters animate-on-scroll">
                 <button class="filter-btn active" data-filter="all">TOUS LES PROJETS</button>
-                <button class="filter-btn" data-filter="civil">GÉNIE CIVIL</button>
-                <button class="filter-btn" data-filter="environment">ENVIRONNEMENT</button>
+                <button class="filter-btn" data-filter="ingenierie">INGÉNIERIE & CONCEPTION 3D</button>
+                <button class="filter-btn" data-filter="construction">CONSTRUCTION & CHANTIERS</button>
             </div>
 
-            <div class="row portfolio-grid">
-                <div class="col-md-4 portfolio-item civil">
-                    <div class="portfolio-wrap">
-                        <img src="assets/hero.png" class="img-fluid" alt="Projet">
-                        <div class="portfolio-info">
-                            <h4>Projet Pilote</h4>
-                            <p>Étude Structurelle</p>
-                            <a href="#" class="details-link"><i class="fas fa-link"></i></a>
+            <div class="portfolio-grid">
+                <!-- Project 1: Villa in Togo -->
+                <div class="col-md-4 portfolio-item ingenierie animate-on-scroll">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Villa Moderniste</span>
+                            <img src="assets/3D%20maison.jpeg" alt="Villa in Togo">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Villa in Togo</h4>
+                            <p>Conception architecturale 3D et modélisation de structure pour une villa moderne individuelle avec véranda et aménagement paysager.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Mouanza Apartment -->
+                <div class="col-md-4 portfolio-item ingenierie animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Immeuble R+3</span>
+                            <img src="assets/3D%20imeuble.jpeg" alt="Mouanza Apartment">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Mouanza Apartment</h4>
+                            <p>Étude de structure, modélisation 3D et dimensionnement des éléments en béton armé pour un immeuble mixte résidentiel et commercial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Louvakou Hostel -->
+                <div class="col-md-4 portfolio-item ingenierie animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Complexe Hôtelier</span>
+                            <img src="assets/3d%20archipelle.jpeg" alt="Louvakou Hostel">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Louvakou Hostel</h4>
+                            <p>Conception architecturale d'un complexe d'hébergement innovant, intégrant des principes bioclimatiques et un cadre moderne.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Catholic Church, Sembe -->
+                <div class="col-md-4 portfolio-item ingenierie animate-on-scroll">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Édifice Public</span>
+                            <img src="assets/3d%20complexe.jpeg" alt="Catholic Church, Sembe">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Catholic Church, Sembe</h4>
+                            <p>Étude structurelle et modélisation 3D d'un édifice religieux et communautaire avec grande portée de charpente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Perimeter Fence -->
+                <div class="col-md-4 portfolio-item construction animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Clôture & Télécom</span>
+                            <img src="assets/enteine%20reseau.jpeg" alt="Perimeter Fence">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Perimeter Fence</h4>
+                            <p>Aménagement et pose de clôtures périmétriques renforcées pour la sécurisation de sites techniques et pylônes de télécommunication.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Perimeter Wall -->
+                <div class="col-md-4 portfolio-item construction animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Maçonnerie & Sécurité</span>
+                            <img src="assets/enteine.jpeg" alt="Perimeter Wall">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Perimeter Wall</h4>
+                            <p>Construction de murs de clôture en maçonnerie structurée avec fondations superficielles pour la protection des infrastructures.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Foundation Level -->
+                <div class="col-md-4 portfolio-item construction animate-on-scroll">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Nivellement & Implantation</span>
+                            <img src="assets/image%20chantier.jpg" alt="Foundation Level">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Foundation Level</h4>
+                            <p>Travaux de topographie, nivellement du sol et implantation géodésique de précision avant la phase de coulage des fondations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Foundation Casting -->
+                <div class="col-md-4 portfolio-item construction animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Coulage Béton Armé</span>
+                            <img src="assets/image%20construction.jpeg" alt="Foundation Casting">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Foundation Casting</h4>
+                            <p>Réalisation du ferraillage, coffrage bois/métallique et coulage de béton armé pour semelles et massifs de fondation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Solar Panel Installation -->
+                <div class="col-md-4 portfolio-item construction animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Énergie Solaire</span>
+                            <img src="assets/instalation%20panneau%20soleil.jpeg" alt="Solar Panel Installation">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Solar Panel Installation</h4>
+                            <p>Pose de panneaux solaires photovoltaïques en toiture, raccordement électrique et optimisation de l'efficacité énergétique.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: Aménagement Intérieur 3D -->
+                <div class="col-md-4 portfolio-item ingenierie animate-on-scroll">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-wrapper">
+                            <span class="portfolio-badge">Design d'Intérieur 3D</span>
+                            <img src="assets/3d%20archipele%20interieur.jpeg" alt="Aménagement Intérieur Archipel">
+                            <div class="portfolio-overlay">
+                                <button class="portfolio-zoom-btn" title="Agrandir">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h4>Aménagement Intérieur 3D</h4>
+                            <p>Modélisation 3D photoréaliste d'espaces intérieurs avec étude de la lumière naturelle, choix des matériaux et optimisation spatiale.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    -->
 
     <!-- Footer -->
     <footer id="contact" class="footer">
@@ -455,6 +635,21 @@
     <button id="open-chat" class="chat-toggle-btn">
         <i class="fas fa-comment-dots"></i>
     </button>
+
+    <!-- Lightbox Modal pour Projets -->
+    <div id="portfolio-modal" class="portfolio-modal">
+        <div class="modal-container">
+            <button id="modal-close" class="modal-close-btn"><i class="fas fa-times"></i></button>
+            <div class="modal-img-wrapper">
+                <img id="modal-img" src="" alt="Projet Edenfrom Engineering">
+            </div>
+            <div class="modal-body-content">
+                <span id="modal-badge" class="modal-badge">Catégorie</span>
+                <h3 id="modal-title">Titre du Projet</h3>
+                <p id="modal-description">Description détaillée du projet.</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
