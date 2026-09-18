@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    document.documentElement.lang = 'fr';
+
     // --- Mobile Menu Toggle ---
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -131,6 +133,58 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 closeModal();
             }
+        });
+    }
+
+    // --- Brochure Language Modal ---
+    const brochureTrigger = document.getElementById('brochure-download-trigger');
+    const brochureModal = document.getElementById('brochure-language-modal');
+    const brochureClose = document.querySelector('.language-modal-close');
+    const languageButtons = document.querySelectorAll('.lang-btn');
+
+    const brochureFiles = {
+        fr: 'assets/EDENFROM ENGINEERING Brochure.pdf',
+        en: 'EDENFROM ENGINEERING Brochure -ANglais.pdf'
+    };
+
+    if (brochureTrigger && brochureModal) {
+        brochureTrigger.addEventListener('click', () => {
+            brochureModal.classList.add('active');
+            brochureModal.setAttribute('aria-hidden', 'false');
+        });
+
+        const closeBrochureModal = () => {
+            brochureModal.classList.remove('active');
+            brochureModal.setAttribute('aria-hidden', 'true');
+        };
+
+        if (brochureClose) {
+            brochureClose.addEventListener('click', closeBrochureModal);
+        }
+
+        brochureModal.addEventListener('click', (event) => {
+            if (event.target === brochureModal) {
+                closeBrochureModal();
+            }
+        });
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                const file = brochureFiles[lang];
+
+                if (file) {
+                    const link = document.createElement('a');
+                    link.href = file;
+                    link.download = `EDENFROM_ENGINEERING_Brochure_${lang === 'fr' ? 'FR' : 'EN'}.pdf`;
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+
+                closeBrochureModal();
+            });
         });
     }
 

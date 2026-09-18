@@ -26,7 +26,19 @@
             </div>
             <div class="top-bar-right">
                 <a href="#contactForm" class="btn-sm"><i class="fas fa-file-invoice"></i> Demander un Devis</a>
-                <a href="assets/EDENFROM%20ENGINEERING%20Brochure.pdf" download="EDENFROM_ENGINEERING_Brochure.pdf" target="_blank" class="btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger Brochure</a>
+                <button type="button" id="brochure-download-trigger" class="btn-sm btn-outline"><i class="fas fa-download"></i> Télécharger Brochure</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="brochure-language-modal" class="language-modal" aria-hidden="true">
+        <div class="language-modal-content">
+            <button type="button" class="language-modal-close" aria-label="Fermer">×</button>
+            <h3>Choisissez votre langue</h3>
+            <p>Veuillez sélectionner la version de la brochure souhaitée.</p>
+            <div class="language-modal-actions">
+                <button type="button" class="lang-btn" data-lang="fr">Français</button>
+                <button type="button" class="lang-btn btn-secondary" data-lang="en">English</button>
             </div>
         </div>
     </div>
@@ -369,8 +381,8 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h4>Perimeter Fence</h4>
-                            <p>Aménagement et pose de clôtures périmétriques renforcées pour la sécurisation de sites techniques et pylônes de télécommunication.</p>
+                            <h4>Montage et démontage de pylônes métalliques</h4>
+                            <p>Montage et démontage de pylônes métalliques pour les réseaux de télécommunication.</p>
                         </div>
                     </div>
                 </div>
@@ -388,8 +400,8 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h4>Perimeter Wall</h4>
-                            <p>Construction de murs de clôture en maçonnerie structurée avec fondations superficielles pour la protection des infrastructures.</p>
+                            <h4>Construction d’un mur de palissade surmonté de fils concertina</h4>
+                            <p>Construction d’un mur de palissade surmonté de fils concertina pour la sécurisation et la protection des pylônes des réseaux de télécommunication.</p>
                         </div>
                     </div>
                 </div>
@@ -451,12 +463,12 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Villa in Togo -->
+                <!-- Project 6: Auberge de Louvakou -->
                 <div class="col-md-4 portfolio-item ingenierie animate-on-scroll" style="transition-delay: 0.2s;">
                     <div class="portfolio-card">
                         <div class="portfolio-img-wrapper">
-                            <span class="portfolio-badge">Villa Moderniste</span>
-                            <img src="assets/3D%20maison.jpeg" alt="Villa in Togo">
+                            <span class="portfolio-badge">Auberge / Hébergement</span>
+                            <img src="assets/3D%20maison.jpeg" alt="Auberge de Louvakou">
                             <div class="portfolio-overlay">
                                 <button class="portfolio-zoom-btn" title="Agrandir">
                                     <i class="fas fa-search-plus"></i>
@@ -464,8 +476,8 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h4>Villa in Togo</h4>
-                            <p>Conception architecturale 3D et modélisation de structure pour une villa moderne individuelle avec véranda et aménagement paysager.</p>
+                            <h4>Auberge de Louvakou</h4>
+                            <p>Conception architecturale et aménagement d'une auberge (Auberge de Louvakou) avec espaces communs, chambres et aménagement paysager adapté à l'accueil des visiteurs.</p>
                         </div>
                     </div>
                 </div>
@@ -493,8 +505,8 @@
                 <div class="col-md-4 portfolio-item ingenierie animate-on-scroll" style="transition-delay: 0.1s;">
                     <div class="portfolio-card">
                         <div class="portfolio-img-wrapper">
-                            <span class="portfolio-badge">Complexe Hôtelier</span>
-                            <img src="assets/3d%20archipelle.jpeg" alt="Louvakou Hostel">
+                            <span class="portfolio-badge">Éducation & Santé</span>
+                            <img src="assets/3d%20complexe.jpeg" alt="Structure of nursing school">
                             <div class="portfolio-overlay">
                                 <button class="portfolio-zoom-btn" title="Agrandir">
                                     <i class="fas fa-search-plus"></i>
@@ -502,8 +514,8 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h4>Louvakou Hostel</h4>
-                            <p>Conception architecturale d'un complexe d'hébergement innovant, intégrant des principes bioclimatiques et un cadre moderne.</p>
+                            <h4>Structure of nursing school</h4>
+                            <p>Structural design and layout for a nursing school building, including classrooms, practical training spaces and administrative areas.</p>
                         </div>
                     </div>
                 </div>
@@ -513,7 +525,7 @@
                     <div class="portfolio-card">
                         <div class="portfolio-img-wrapper">
                             <span class="portfolio-badge">Édifice Public</span>
-                            <img src="assets/3d%20complexe.jpeg" alt="Catholic Church, Sembe">
+                            <img src="assets/3d%20archipelle.jpeg" alt="Catholic Church, Sembe">
                             <div class="portfolio-overlay">
                                 <button class="portfolio-zoom-btn" title="Agrandir">
                                     <i class="fas fa-search-plus"></i>
@@ -532,7 +544,7 @@
                     <div class="portfolio-card">
                         <div class="portfolio-img-wrapper">
                             <span class="portfolio-badge">Design d'Intérieur 3D</span>
-                            <img src="assets/3d%20archipele%20interieur.jpeg" alt="Aménagement Intérieur Archipel">
+                            <img src="assets/3d%20archipele%20interieur.jpeg" alt="Aménagement intérieur de l'église catholique, Sembe">
                             <div class="portfolio-overlay">
                                 <button class="portfolio-zoom-btn" title="Agrandir">
                                     <i class="fas fa-search-plus"></i>
@@ -540,8 +552,8 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <h4>Aménagement Intérieur 3D</h4>
-                            <p>Modélisation 3D photoréaliste d'espaces intérieurs avec étude de la lumière naturelle, choix des matériaux et optimisation spatiale.</p>
+                            <h4>Aménagement intérieur de l'église catholique, Sembe</h4>
+                            <p>Aménagement intérieur de l'église catholique de Sembe : agencement liturgique, éclairage, revêtements et mobilier.</p>
                         </div>
                     </div>
                 </div>
@@ -565,9 +577,9 @@
                             <strong>Heures:</strong> Lun – Sam 08h00 – 18h00<br>
                         </p>
                         <div class="social-links mt-3">
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61594602773826&sk=followers" class="facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/company/146596640/admin/dashboard/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
 
